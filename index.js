@@ -12,45 +12,10 @@ const { createWriteStream } = require("fs");
 
 const app = express();
 
-// var queryType = new GraphQLObjectType({
-//   name: "Query",
-//   fields: {
-//     message: {
-//       type: GraphQLString,
-//     },
-//     resolve: () => {
-//       return "hello world";
-//     },
-//   },
-// });
-
-// var fakeDatabase = {
-//   a: {
-//     id: "a",
-//     name: "alice",
-//   },
-//   b: {
-//     id: "b",
-//     name: "bob",
-//   },
-// };
-
-// var userType = new GraphQLObjectType({
-//   name: "User",
-//   fields: {
-//     id: { type: GraphQLString },
-//     name: { type: GraphQLString },
-//   },
-// });
-
 var queryType = new GraphQLObjectType({
   name: "Query",
   fields: {
     user: {
-      //   type: userType,
-      //   args: {
-      //     id: { type: GraphQLString },
-      //   },
       type: GraphQLString,
       resolve: (_, { id }) => {
         return "hello world";
